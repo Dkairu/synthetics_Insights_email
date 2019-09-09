@@ -1,4 +1,4 @@
-Use this synthetics script to email Insights Dashboards with PDF links to stake holders. Just copy the code in scriptedbrowser.js into your scripted browser script editor and copy the package.json file to a location where you can call when running cpm.
+Use this synthetics script to email Insights Dashboards with PDF links to stake holders. Just copy the code in scriptedbrowser.js into your New Relic scripted browser script editor section and copy the package.json file to a location where you can call when running cpm.
 
 The script uses a 3rd party module nodemailer to send the emails and requires you to run it in CPM. You will have to create a package.json file with it as a dependency and call it when running the CPM container.
 
