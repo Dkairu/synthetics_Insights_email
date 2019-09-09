@@ -29,4 +29,4 @@ emailSettings = {
 ```
 To provide a weekly or monthly report you can use the downtime feature in synthetics to setup accordingly.
 
-Please note if you will be using gmail to send out the reports, you will also need to change the security access settings to allow 3rd part access. 
+Please note if you will be using gmail to send out the reports, you will also need to change the security access settings to allow 3rd party access. 
