@@ -13,6 +13,7 @@ quay.io/newrelic/synthetics-minion:latest
 ```
 Easy enough to get it started all you need before running it is filling out these details.
 ```
+NRLogin = 'New Relic Username';
 NRPass = 'New Relic Password';
 Dashboard = 'Enter dashboard # or unique name';
 Sender = 'Email you want to appear as the sender';
