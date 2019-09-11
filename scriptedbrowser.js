@@ -101,8 +101,7 @@ $browser.getCapabilities().then(function() {})
 		log(1, 'Open the New Relic Login Page');
 		return $browser.get("https://login.newrelic.com/login?return_to=https%3A%2F%2Fone.newrelic.com%2F");
 	})
-
-.then(function() {
+	.then(function() {
 		log(2, 'Click on the login form');
 		return $browser.waitForAndFindElement(By.id("login"), DefaultTimeout);
 	})
