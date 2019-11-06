@@ -101,7 +101,8 @@ $browser.getCapabilities().then(function() {})
 		log(1, 'Open the New Relic Login Page');
 		return $browser.get("https://login.newrelic.com/login?return_to=https%3A%2F%2Fone.newrelic.com%2F");
 	})
-	.then(function() {
+
+.then(function() {
 		log(2, 'Click on the login form');
 		return $browser.waitForAndFindElement(By.id("login"), DefaultTimeout);
 	})
@@ -160,7 +161,7 @@ $browser.getCapabilities().then(function() {})
 	.then(function() {
 		log(10, 'Click on PDF download');
 		$browser.sleep(3000);
-		return $browser.waitForAndFindElement(By.css(".nr1ui-Tooltip-trigger:nth-child(1) .AAB1AC-wnd-HeaderControl-icon"), DefaultTimeout);
+		return $browser.waitForAndFindElement(By.xpath("//div[contains(@class,'HeaderControl-trigger')][1]/button"), DefaultTimeout);
 	})
 	.then(function(el) {
 		el.click();
@@ -178,7 +179,7 @@ $browser.getCapabilities().then(function() {})
 	})
 	.then(function() {
 		log(12, 'Click on full screen and take a screenshot');
-		return $browser.waitForAndFindElement(By.css(".nr1ui-Tooltip-trigger:nth-child(5) .AAB1AC-wnd-HeaderControl-icon"), DefaultTimeout);
+		return $browser.waitForAndFindElement(By.xpath("//div[contains(@class,'HeaderControl-trigger')][5]/button"), DefaultTimeout);
 	})
 	.then(function(el) {
 		el.click();
