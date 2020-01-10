@@ -83,7 +83,6 @@ function writeScreenshot(data) {
 	});
 }
 
-
 /** BEGINNING OF SCRIPT **/
 
 console.log('Starting synthetics script: {Untitled Test Case}');
@@ -101,8 +100,7 @@ $browser.getCapabilities().then(function() {})
 		log(1, 'Open the New Relic Login Page');
 		return $browser.get("https://login.newrelic.com/login?return_to=https%3A%2F%2Fone.newrelic.com%2F");
 	})
-
-.then(function() {
+	.then(function() {
 		log(2, 'Click on the login form');
 		return $browser.waitForAndFindElement(By.id("login"), DefaultTimeout);
 	})
@@ -204,12 +202,10 @@ $browser.getCapabilities().then(function() {})
 			console.log('Message sent: ' + info.response);
 		});
 	})
-
-
-.then(function() {
+	.then(function() {
 	log(lastStep, '');
 	console.log('Browser script execution SUCCEEDED.');
-}, function(err) {
+	}, function(err) {
 	console.log('Browser script execution FAILED.');
 	throw (err);
-});
+	});
