@@ -10,12 +10,13 @@ Recipients = 'Email or emails of receipients separated by a comma';
 Subject = 'Subject of the email';
 
 emailSettings = {
-	service: 'Gmail',
-	auth: {
-		user: 'EMAIL_ADDRESS',
-		pass: 'EMAIL_PASSWORD'
-	}
+    service: 'Gmail',
+    auth: {
+        user: 'EMAIL_ADDRESS',
+        pass: 'EMAIL_PASSWORD'
+    }
 };
+
 /** END OF CONFIGURATION **/
 
 // Theshold for duration of entire script - fails test if script lasts longer than X (in ms)
@@ -83,6 +84,7 @@ function writeScreenshot(data) {
 	});
 }
 
+
 /** BEGINNING OF SCRIPT **/
 
 console.log('Starting synthetics script: {Untitled Test Case}');
@@ -130,7 +132,7 @@ $browser.getCapabilities().then(function() {})
 	})
 	.then(function() {
 		log(6, 'Go to Dashboards');
-		return $browser.waitForAndFindElement(By.css(".nr1-LauncherCard:nth-child(3) .nr1-LauncherLogo"), DefaultTimeout);
+		return $browser.waitForAndFindElement(By.xpath("//*[text()='Dashboards']"), DefaultTimeout);
 	})
 	.then(function(el) {
 		el.click();
@@ -159,7 +161,7 @@ $browser.getCapabilities().then(function() {})
 	.then(function() {
 		log(10, 'Click on PDF download');
 		$browser.sleep(3000);
-		return $browser.waitForAndFindElement(By.xpath("//div[contains(@class,'HeaderControl-trigger')][1]/button"), DefaultTimeout);
+		return $browser.waitForAndFindElement(By.xpath("//div[contains(@class,'HeaderControl-trigger')][2]/button"), DefaultTimeout);
 	})
 	.then(function(el) {
 		el.click();
@@ -202,10 +204,10 @@ $browser.getCapabilities().then(function() {})
 			console.log('Message sent: ' + info.response);
 		});
 	})
-	.then(function() {
+.then(function() {
 	log(lastStep, '');
 	console.log('Browser script execution SUCCEEDED.');
-	}, function(err) {
+}, function(err) {
 	console.log('Browser script execution FAILED.');
 	throw (err);
-	});
+});
