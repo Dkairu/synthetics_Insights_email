@@ -179,7 +179,7 @@ $browser.getCapabilities().then(function() {})
 	})
 	.then(function() {
 		log(12, 'Click on full screen and take a screenshot');
-		return $browser.waitForAndFindElement(By.xpath("//div[contains(@class,'HeaderControl-trigger')][5]/button"), DefaultTimeout);
+		return $browser.waitForAndFindElement(By.xpath("//div[contains(@class,'HeaderControl-trigger')][1]/button"), DefaultTimeout);
 	})
 	.then(function(el) {
 		el.click();
