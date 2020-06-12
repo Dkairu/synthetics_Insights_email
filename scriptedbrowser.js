@@ -132,7 +132,7 @@ $browser.getCapabilities().then(function() {})
 	})
 	.then(function() {
 		log(6, 'Go to Dashboards');
-		return $browser.waitForAndFindElement(By.xpath("//*[text()='Dashboards']"), DefaultTimeout);
+		return $browser.waitForAndFindElement(By.xpath("//p[contains(.,'Dashboards')]"), DefaultTimeout);
 	})
 	.then(function(el) {
 		el.click();
@@ -161,7 +161,7 @@ $browser.getCapabilities().then(function() {})
 	.then(function() {
 		log(10, 'Click on PDF download');
 		$browser.sleep(3000);
-		return $browser.waitForAndFindElement(By.xpath("//div[contains(@class,'HeaderControl-trigger')][2]/button"), DefaultTimeout);
+		return $browser.waitForAndFindElement(By.css(".AAC5AC-wnd-Tooltip-trigger:nth-child(2) > .AAC5AC-wnd-Button > .AAC5AC-wnd-Icon"), DefaultTimeout);
 	})
 	.then(function(el) {
 		el.click();
@@ -179,7 +179,7 @@ $browser.getCapabilities().then(function() {})
 	})
 	.then(function() {
 		log(12, 'Click on full screen and take a screenshot');
-		return $browser.waitForAndFindElement(By.xpath("//div[contains(@class,'HeaderControl-trigger')][1]/button"), DefaultTimeout);
+		return $browser.waitForAndFindElement(By.css(".AAC5AC-wnd-Tooltip-trigger:nth-child(1) > .AAC5AC-wnd-Button > .AAC5AC-wnd-Icon"), DefaultTimeout);
 	})
 	.then(function(el) {
 		el.click();
@@ -204,10 +204,10 @@ $browser.getCapabilities().then(function() {})
 			console.log('Message sent: ' + info.response);
 		});
 	})
-.then(function() {
+	.then(function() {
 	log(lastStep, '');
 	console.log('Browser script execution SUCCEEDED.');
-}, function(err) {
+	}, function(err) {
 	console.log('Browser script execution FAILED.');
 	throw (err);
-});
+	});
